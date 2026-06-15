@@ -1,0 +1,25 @@
+# Apple Intelligence 推理中继 (apple-relay 走 Cloudflare/Fastly/Apple/Akamai 多CDN, keyword一并覆盖)
+DOMAIN-KEYWORD,apple-relay
+
+# Siri 后端 / 资源
+DOMAIN-SUFFIX,siri.apple.com
+DOMAIN-SUFFIX,smoot.apple.com
+DOMAIN-SUFFIX,guzzoni.apple.com
+DOMAIN,api-siri-prod.apple.com
+DOMAIN-SUFFIX,aaplimg.com
+DOMAIN-SUFFIX,gspe1-ssl.ls.apple.com
+DOMAIN-SUFFIX,cp4.cloudflare.com
+
+# Apple 账号/地区认证 (出口IP参与服务区判定, 必须同走海外, 否则 Siri AI 整体失效)
+DOMAIN,gsa.apple.com
+DOMAIN-SUFFIX,ess.apple.com
+DOMAIN-SUFFIX,gateway.icloud.com
+DOMAIN-SUFFIX,unlinkability.apple.com
+DOMAIN-SUFFIX,pat-issuer.cloudflare.com
+DOMAIN,setup.icloud.com
+DOMAIN,aidc.apple.com
+DOMAIN,mask-api.icloud.com
+
+# ChatGPT 扩展中继 apple-relay.apple.com 的 Apple 自有 IP 段
+# (它用真实IP直发QUIC, 域名规则抓不到, 必须按IP兜底)
+IP-CIDR,17.248.0.0/16,no-resolve
