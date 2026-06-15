@@ -1,0 +1,10 @@
+{
+  "name": "SiriAI 图标包",
+  "description": "SiriAI 自用图标包 / by ohayoucch",
+  "icons": [
+    {
+      "name": "SiriAI",
+      "url": "https://cdn.jsdelivr.net/gh/ohayoucch/Surge@Ruleset/icon/SiriAI.png"
+    }
+  ]
+}
