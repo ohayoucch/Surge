@@ -1,4 +1,6 @@
-# Apple Intelligence 推理中继 (apple-relay 走 Cloudflare/Fastly/Apple/Akamai 多CDN, keyword一并覆盖)
+#OS27 Siri AI
+
+# Apple Intelligence 推理中继
 DOMAIN-KEYWORD,apple-relay
 
 # Siri 后端 / 资源
