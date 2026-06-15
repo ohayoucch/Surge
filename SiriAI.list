@@ -1,5 +1,17 @@
 #OS27 Siri AI
 
+# ============================================================
+# ⚠️ 节点不支持 UDP 时(如 snell/部分中转)
+# apple-relay 优先用 QUIC(UDP)。若节点不支持 UDP 转发,
+# 需在主配置 RULE-SET 之前额外加两条,强制 QUIC 回退 TCP:
+#   AND,((DOMAIN-KEYWORD,apple-relay),(PROTOCOL,QUIC)),REJECT-NO-DROP
+#   AND,((IP-CIDR,17.248.0.0/16,no-resolve),(PROTOCOL,QUIC)),REJECT-NO-DROP
+# (REJECT-NO-DROP 主动拒绝 QUIC 让客户端秒回退 TCP;节点支持 UDP 则不需要。)
+#
+# 注意:IP-CIDR,17.248.0.0/16 会把该整段 Apple IP 导向代理
+# (含少量其他 Apple 服务),是为覆盖 ChatGPT 的取舍。
+# ============================================================
+
 # Apple Intelligence 推理中继
 DOMAIN-KEYWORD,apple-relay
 
